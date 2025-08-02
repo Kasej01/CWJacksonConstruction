@@ -11,7 +11,10 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="navbar-logo">CW Jackson Construction</div>
+      {/* Replace text logo with SVG logo */}
+      <div className="navbar-logo">
+        <img src="/logo.svg" alt="CW Jackson Construction Logo" />
+      </div>
       <div className="hamburger" onClick={toggleMenu}>
         <div></div>
         <div></div>

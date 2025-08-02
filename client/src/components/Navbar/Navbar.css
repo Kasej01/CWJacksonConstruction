@@ -7,9 +7,9 @@
   padding: 1rem;
 }
 
-.navbar-logo {
-  font-size: 1.75rem;
-  font-weight: bold;
+.navbar-logo img {
+  height: 70px;
+  filter: invert(1);
 }
 
 .navbar-links {
@@ -48,8 +48,8 @@
 
 /* Responsive styles */
 @media (max-width: 768px) {
-  .navbar-logo {
-    font-size: 1.5rem;
+.navbar-logo img {
+    height: 60px;
   }
   .navbar-links {
     display: none;
@@ -73,12 +73,12 @@
 }
 
 @media (max-width: 400px) {
-  .navbar-logo {
-    font-size: 1.25rem;;
+  .navbar-logo img {
+    height: 40px;
   }
 
-  .navbar-links{
-    margin-top: -1rem;
+  .navbar-links {
+    margin-top: -.5rem;
   }
 
   .navbar-links a {
