@@ -1,3 +1,4 @@
+require("dotenv").config();
 const sqlite3 = require("sqlite3").verbose();
 const bcrypt = require("bcrypt");
 
@@ -32,15 +33,18 @@ db.serialize(() => {
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       section_name TEXT NOT NULL,
       content TEXT NOT NULL,
-      updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+      updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )
   `);
 
-  // Insert default admin user (password: admin123)
-  const passwordHash = bcrypt.hashSync("admin123", 10);
+  // Insert default admin user
+  const adminUsername = process.env.ADMIN_USERNAME;
+  const adminPassword = process.env.ADMIN_PASSWORD;
+  const passwordHash = bcrypt.hashSync(adminPassword, 10);
+
   db.run(
     `INSERT OR IGNORE INTO users (username, password_hash) VALUES (?, ?)`,
-    ["admin", passwordHash]
+    [adminUsername, passwordHash]
   );
 
   console.log("Database initialized");
