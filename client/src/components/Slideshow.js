@@ -12,27 +12,39 @@ export default function Slideshow({ images = [], fit = "cover", intervalMs = 400
 
   const go = (n) => setI((prev) => (prev + n + images.length) % images.length);
 
+  // Debug: Show a test message to confirm component is rendering
+  // Remove this after debugging
+  console.log('Slideshow component rendered');
+
+  if (!images || images.length === 0) {
+    return (
+      <div className="carousel carousel--empty">
+        <p>Slideshow component is rendering, but no images to display in the carousel.</p>
+      </div>
+    );
+  }
+
   return (
-    <div className="sqc">
+    <div className="carousel">
       {images.map((src, idx) => (
         <img
           key={src + idx}
           src={src}
-          alt=""
-          className={`sqc__slide ${idx === i ? "is-active" : ""}`}
+          alt={src}
+          className={`carousel__slide${idx === i ? " is-active" : ""}`}
           style={{ objectFit: fit }}
           loading="lazy"
         />
       ))}
 
-      <button className="sqc__btn sqc__btn--prev" onClick={() => go(-1)} aria-label="Previous">‹</button>
-      <button className="sqc__btn sqc__btn--next" onClick={() => go(+1)} aria-label="Next">›</button>
+      <button className="carousel__btn carousel__btn--prev" onClick={() => go(-1)} aria-label="Previous">‹</button>
+      <button className="carousel__btn carousel__btn--next" onClick={() => go(+1)} aria-label="Next">›</button>
 
-      <div className="sqc__dots" role="tablist" aria-label="Slide selector">
+      <div className="carousel__dots" role="tablist" aria-label="Slide selector">
         {images.map((_, idx) => (
           <button
             key={idx}
-            className={`sqc__dot ${idx === i ? "is-active" : ""}`}
+            className={`carousel__dot${idx === i ? " is-active" : ""}`}
             onClick={() => setI(idx)}
             aria-label={`Go to slide ${idx + 1}`}
             aria-selected={idx === i}

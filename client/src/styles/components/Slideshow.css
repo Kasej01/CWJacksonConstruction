@@ -1,5 +1,5 @@
 /* Square frame that naturally fits 1:1 photos */
-.sqc {
+.carousel {
   position: relative;
   aspect-ratio: 1 / 1;
   width: 100%;
@@ -7,10 +7,12 @@
   overflow: hidden;
   background: #f6f6f6;
   box-shadow: 0 8px 20px rgba(0,0,0,.06);
+  background: #ffe;
+  min-height: 450px;
 }
 
 /* Stack slides; fade the active one in */
-.sqc__slide {
+.carousel__slide {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -18,10 +20,10 @@
   opacity: 0;
   transition: opacity .5s ease;
 }
-.sqc__slide.is-active { opacity: 1; }
+.carousel__slide.is-active { opacity: 1; }
 
 /* Controls */
-.sqc__btn {
+.carousel__btn {
   position: absolute;
   top: 50%; transform: translateY(-50%);
   background: rgba(255,255,255,.9);
@@ -30,16 +32,29 @@
   display: grid; place-items: center;
   cursor: pointer;
 }
-.sqc__btn--prev { left: .5rem; }
-.sqc__btn--next { right: .5rem; }
+.carousel__btn--prev { left: .5rem; }
+.carousel__btn--next { right: .5rem; }
 
 /* Dots */
-.sqc__dots {
+.carousel__dots {
   position: absolute; bottom: .5rem; left: 0; right: 0;
   display: flex; justify-content: center; gap: .4rem;
 }
-.sqc__dot {
+.carousel__dot {
   width: 8px; height: 8px; border-radius: 50%;
   border: 0; background: rgba(0,0,0,.2); cursor: pointer;
 }
-.sqc__dot.is-active { background: rgba(0,0,0,.65); }
+.carousel__dot.is-active { background: rgba(0,0,0,.65); }
+
+
+@media screen and (max-width: 450px){
+    .carousel {
+    min-height: 225px;
+  }
+}
+
+@media screen and (max-width: 800px){
+    .carousel {
+    min-height: 350px;
+  }
+}
