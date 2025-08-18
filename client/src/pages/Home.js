@@ -16,21 +16,34 @@ export default function Home() {
   ];
 
   return (
-    <section id="home-container">
-      <div className="home__intro">
-        <h1>We do great work for great people</h1>
-        <p>
-          CW Jackson Construction LLC is a locally owned and operated business based in Grundy County, TN, specializing in dump truck services including gravel, topsoil, and fill dirt delivery. We also provide professional debris removal for trees, buildings, and more—handling projects of all sizes, from driveways and carports to parking lots. Our commitment to professionalism and customer satisfaction sets us apart. Fully licensed, registered, and insured, we proudly serve Grundy, Franklin, Coffee, and parts of Marion counties.
-        </p>
-        <div className="home__ctas">
-          <a className="btn btn--primary" href="/contact">Get a Quote</a>
-          <a className="btn" href="/services">See Services</a>
+    <div id="home-container">
+      <section id="intro-container">
+        <div className="home_intro">
+          <h1>We do great work for great people</h1>
+          <p>
+            CW Jackson Construction LLC is a locally owned and operated business based in Grundy County, TN, specializing in dump truck services including gravel, topsoil, and fill dirt delivery. We also provide professional debris removal for trees, buildings, and more—handling projects of all sizes, from driveways and carports to parking lots. Our commitment to professionalism and customer satisfaction sets us apart. Fully licensed, registered, and insured, we proudly serve Grundy, Franklin, Coffee, and parts of Marion counties.
+          </p>
+          <div className="home_ctas">
+            <a className="btn btn--primary" href="/contact">Get a Quote</a>
+            <a className="btn" href="/services">See Services</a>
+          </div>
         </div>
-      </div>
 
-      <div className="home__carousel-wrap">
-        <Slideshow images={images} fit="cover" />
-      </div>
-    </section>
+        <div className="home_carousel-wrap">
+          <Slideshow images={images} fit="cover" />
+        </div>
+      </section>
+      <section id="service-area-container">
+          <h2>Service Area</h2>
+          <p>
+            We proudly serve Grundy, Franklin, Coffee, and parts of Marion counties. See the map below for our coverage area.
+          </p>
+          <img
+            src="/service_map.png"
+            alt="Service Area Map"
+            className="home-service-map"
+          />
+      </section>
+    </div>
   );
 }

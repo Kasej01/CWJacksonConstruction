@@ -1,4 +1,4 @@
-#home-container{
+#intro-container{
     min-height: 80vh;
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -9,33 +9,83 @@
     margin: 0 auto;
 }
 
-.home__intro h1 { margin: 0 0 .5rem; font-size: clamp(1.6rem, 2.5vw, 2.4rem); }
-.home__intro p  { margin: 0 0 1rem; line-height: 1.6; color: #333; }
+.home_intro h1 { margin: 0 0 .5rem; font-size: clamp(1.6rem, 2.5vw, 2.4rem); }
+.home_intro p  { margin: 0 0 1rem; line-height: 1.6; color: #333; }
 
-.home__ctas { display: flex; gap: .75rem; }
+.home_ctas { display: flex; gap: .75rem; }
 .btn { padding: .6rem 1rem; border: 1px solid #ddd; border-radius: .5rem; text-decoration: none; }
 .btn--primary { background: #111; color: #fff; border-color: #111; }
 
-.home__carousel-wrap {
-  max-width: 480px;
-  margin-inline: auto;
+.home_carousel-wrap {
+    max-width: 480px;
+    margin-inline: auto;
+}
+
+
+
+/* Service Area Section Styles */
+#service-area-container {
+    grid-column: 1 / -1;
+    margin: 2rem 0 0 0;
+    padding: 1.5rem;
+    background: #f8f8f8;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    text-align: center;
+}
+#service-area-container h2 {
+    margin-top: 0;
+    font-size: 2rem;
+}
+#service-area-container p{
+    font-size: 1.25rem;
+    width: 40vw;
+    margin: auto;
+}
+.home-service-map {
+    max-width: 340px;
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 @media (max-width: 900px) {
-  #home-container { grid-template-columns: 1fr; }
-  .home__carousel-wrap { max-width: 420px; }
+  #intro-container { grid-template-columns: 1fr; }
+  .home_carousel-wrap { max-width: 420px; }
+  #service-area-container p{
+    width: 70vw;
+}
 }
 
 @media (max-width: 650px){
-    .home__intro h1 { 
+    .home_intro h1 { 
         font-size: 1.5rem;
         text-align: center;
     }
-    .home__intro p  { 
+    .home_intro p  { 
         font-size: 0.85rem;
         text-align: center;
     }
     .btn { 
         margin: auto;
     }
-
+    #service-area-container {
+        margin: .5rem 0 0 0;
+        padding: 1rem;
+        border-radius: 0.5rem;
+    }
+    #service-area-container h2 {
+        margin-top: 0;
+        font-size: 1.5rem;
+    }
+    .home-service-map {
+        max-width: 270px;
+        margin-top: .5rem;
+        border-radius: 0.75rem;
+    }
+    #service-area-container p{
+        width: 80vw;
+        font-size: 1rem;
+    }
 }
