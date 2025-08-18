@@ -1,0 +1,26 @@
+.footer-container {
+  width: 100%;
+  background: rgb(139, 139, 139, 0.4);
+  color: black;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 1rem;
+}
+
+.footer-large {
+  display: block;
+}
+
+.footer-small {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .footer-large {
+    display: none;
+  }
+  .footer-small {
+    display: block;
+    font-size: 0.95rem;
+  }
+}

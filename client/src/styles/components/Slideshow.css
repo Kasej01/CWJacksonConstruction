@@ -1,0 +1,45 @@
+/* Square frame that naturally fits 1:1 photos */
+.sqc {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #f6f6f6;
+  box-shadow: 0 8px 20px rgba(0,0,0,.06);
+}
+
+/* Stack slides; fade the active one in */
+.sqc__slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity .5s ease;
+}
+.sqc__slide.is-active { opacity: 1; }
+
+/* Controls */
+.sqc__btn {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,.9);
+  border: 1px solid rgba(0,0,0,.08);
+  width: 36px; height: 36px; border-radius: 50%;
+  display: grid; place-items: center;
+  cursor: pointer;
+}
+.sqc__btn--prev { left: .5rem; }
+.sqc__btn--next { right: .5rem; }
+
+/* Dots */
+.sqc__dots {
+  position: absolute; bottom: .5rem; left: 0; right: 0;
+  display: flex; justify-content: center; gap: .4rem;
+}
+.sqc__dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  border: 0; background: rgba(0,0,0,.2); cursor: pointer;
+}
+.sqc__dot.is-active { background: rgba(0,0,0,.65); }
