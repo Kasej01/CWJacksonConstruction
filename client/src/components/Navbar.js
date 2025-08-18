@@ -21,7 +21,7 @@ export default function Navbar() {
       <div className={`links${menuOpen ? ' open' : ''}`}>
         <a className="link" href="/">Home</a>
         <a className="link" href="/contact">Contact</a>
-        <a className="link" href="/contact">Services</a>
+        <a className="link" href="/services">Services</a>
       </div>
     </div>
   );
