@@ -82,3 +82,42 @@
   font-size: 1.1em;
   line-height: 1;
 }
+
+@media (max-width: 600px) {
+  .contact-container {
+    max-width: 100%;
+    padding: 1rem 0.5rem;
+    margin: 1rem 0.2rem;
+    border-radius: 0.7rem;
+  }
+
+  .contact-container h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .contact-form {
+    gap: 0.8rem;
+  }
+
+  .contact-form label {
+    font-size: 0.98rem;
+    gap: 0.3rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.98rem;
+    padding: 0.6rem 0.7rem;
+  }
+
+  .contact-form button[type="submit"] {
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+  }
+
+  .contact-success {
+    font-size: 0.98rem;
+    padding: 0.7rem;
+  }
+}
